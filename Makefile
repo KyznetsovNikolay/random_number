@@ -6,11 +6,9 @@ build:
 	cp .env.example .env
 	docker-compose build
 
-cp_env:
-	cp .env.example .env
-
 up:
 	docker-compose up -d
+	docker-compose run --rm app composer install
 
 ps:
 	docker-compose ps
